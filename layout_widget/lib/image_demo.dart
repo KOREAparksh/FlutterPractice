@@ -18,6 +18,7 @@ class ImageDemo extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Image.asset('assets/test_image.png'),
+            Text("gi"),
           ],
         ),
       ),
