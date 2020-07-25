@@ -23,7 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  contacts_service: ^0.3.10
+  permission_handler: ^4.2.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -32,6 +33,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  cupertino_icons : ^0.1.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -77,3 +79,13 @@ flutter:
 
   assets :
     - assets/test_image.png
+  fonts:
+    - family: NanumGothic
+      fonts:
+        - asset: assets/fonts/NanumGothic.ttf
+        - asset: assets/fonts/NanumGothicBold.ttf
+    - family: NotoSans
+      fonts:
+        - asset: assets/fonts/NotoSansKR-Bold.otf
+        - asset: assets/fonts/NotoSansKR-Regular.otf
+        - asset: assets/fonts/NotoSansKR-Medium.otf
