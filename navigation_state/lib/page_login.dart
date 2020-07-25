@@ -17,13 +17,13 @@ class _LoginPageState extends State<LoginPage> {
 
   void _onLogin(BuildContext context) {
     final String email = _emailController.text;
-    final SimpleState state = Provider.of<SimpleState>(context);
+    final SimpleState state = Provider.of<SimpleState>(context, listen: false);
     state.setEmail(email);
 
     Navigator.pushNamed(context, MAIN_PAGE);
   }
 
-  void onCancel() => exit(0);
+  void _onCancel() => exit(0);
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +34,39 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           children: <Widget>[
             Hero(
-              tag: 'heoro',
-              child: CircleAvatar(
-                child: Image.asset('assets/'),
-              ),
-            )
+                tag: 'heoro',
+                child: CircleAvatar(
+                  child: Image.asset('assets/test_image.png'),
+                  backgroundColor: Colors.transparent,
+                  radius: 58.0,
+                )),
+            SizedBox(height: 45.0),
+            TextFormField(
+              keyboardType: TextInputType.emailAddress,
+              decoration: InputDecoration(border: OutlineInputBorder()),
+              controller: _emailController,
+            ),
+            SizedBox(height: 15.0),
+            TextFormField(
+              obscureText: true,
+              decoration: InputDecoration(border: OutlineInputBorder()),
+              controller: _passwordController,
+            ),
+            SizedBox(height: 10.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                RaisedButton(
+                  child: Text('Log In'),
+                  onPressed: () => _onLogin(context),
+                ),
+                SizedBox(width: 10.0),
+                RaisedButton(
+                  child: Text('Cancel'),
+                  onPressed: _onCancel,
+                ),
+              ],
+            ),
           ],
         ),
       ),
