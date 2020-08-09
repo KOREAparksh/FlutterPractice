@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:geolocator/geolocator.dart';
 
 void main() => runApp(BatteryPage());
 
@@ -18,6 +19,11 @@ class _BatteryPageState extends State<BatteryPage> {
 
   _refresh() async {
     print('refresh battery level');
+
+    Position position = await Geolocator()
+        .getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+
+    print(position);
 
     String _newText;
     try {
