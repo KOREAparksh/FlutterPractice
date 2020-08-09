@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -33,11 +34,11 @@ class _BatteryPageState extends State<BatteryPage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return CupertinoApp(
       title: '배터리 채널 데모 v1',
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: Text('배터리 채널 데모 v1')),
+        appBar: CupertinoNavigationBar(middle: Text('배터리 채널 데모 v1')),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
