@@ -4,10 +4,12 @@ import 'page_main.dart';
 import 'package:provider/provider.dart';
 import 'state_simple.dart';
 
-void main() => runApp(ChangeNotifierProvider(
-      create: (context) => SimpleState(),
-      child: StateLoginDemo(),
-    ));
+void main() => runApp(loginFormApp);
+
+var loginFormApp = ChangeNotifierProvider(
+  create: (context) => SimpleState(),
+  child: StateLoginDemo(),
+);
 
 const String ROOT_PAGE = '/';
 const String MAIN_PAGE = '/main';
